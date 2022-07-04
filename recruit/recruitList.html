@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="uTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LeeJaeGu</title>
+	<style type="text/css">
+		table, th, td {
+			width:"100%";
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		h3 {
+			text-align: center;
+		}
+		table {
+		    margin-left:auto; 
+		    margin-right:auto;
+		}
+		caption {
+			text-align:right;
+		}
+	</style>
+</head>
+
+<body> <!-- 테이블로된 목록화면 -->
+	<h3>입사지원현황</h3>
+	<form method="get" action="./result.html" id="form">
+		<table>
+			<caption>
+				<button type="button" id="btnJoin" onClick="location.href='recruitRegForm.html'">
+			<span>추가하기</span>
+		</button>
+			</caption>
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="chk_box" id="all" onclick="allcheck();"></th>
+					<th width="100px">이름</th>
+					<th width="100px">아이디</th>
+					<th width="100px">생년월일</th>
+					<th width="100px">성별</th>
+					<th width="200px">주소</th>
+					<th>상세주소</th>
+					<th width="200px">이메일주소</th>
+					<th width="200px">모바일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+					<td onClick="location.href='recruitView.html'" style="cursor:pointer;">이가나</td>
+					<td>1a2a3a</td>
+					<td>1996.01.01</td>
+					<td>남</td>
+					<td>서울특별시 광진구</td>
+					<td>능동 123123123</td>
+					<td>123@naver.com</td>
+					<td>010-1111-1111</td>
+				</tr>
+				<tr>
+					<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+					<td onClick="location.href='recruitView.html'" style="cursor:pointer;">이다라</td>
+					<td>1b2b3b</td>
+					<td>1996.02.01</td>
+					<td>여</td>
+					<td>서울특별시 성동구</td>
+					<td>송정동 123123123</td>
+					<td>456@naver.com</td>
+					<td>010-2222-2222</td>
+				</tr>
+				<tr>
+					<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+					<td onClick="location.href='recruitView.html'" style="cursor:pointer;">이마바</td>
+					<td>1c2c3c</td>
+					<td>1996.03.01</td>
+					<td>남</td>
+					<td>서울특별시 송파구</td>
+					<td>잠실4동 123123123</td>
+					<td>789@naver.com</td>
+					<td>010-3333-3333</td>
+				</tr>
+				<tr>
+					<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+					<td onClick="location.href='recruitView.html'" style="cursor:pointer;">김사아</td>
+					<td>1d2d3d</td>
+					<td>1996.04.01</td>
+					<td>여</td>
+					<td>서울특별시 강동구</td>
+					<td>천호2동 123123123</td>
+					<td>1011@naver.com</td>
+					<td>010-4444-4444</td>
+				</tr>
+				<tr>
+					<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+					<td onClick="location.href='recruitView.html'" style="cursor:pointer;">김바사</td>
+					<td>1e2e3e</td>
+					<td>1996.05.01</td>
+					<td>여</td>
+					<td>서울특별시 강남구</td>
+					<td>역삼동 123123123</td>
+					<td>1213@naver.com</td>
+					<td>010-5555-5555</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<script type="text/javascript">
+	function allcheck(){
+        var chk_box = document.getElementsByName("chk_box");
+        var checkItem="";
+        for(var i = 0; i < chk_box.length; i++){
+           if(chk_box[0].checked == true){
+        	   chk_box[i].checked = true;
+           } else {
+        	   chk_box[i].checked = false;
+           }
+        }
+     }
+     
+     function check(){
+        var chk_box = document.getElementsByName("chk_box");
+        var checkItem="";
+        for(var i = 0 ; i < chk_box.length; i++){
+           if(chk_box[i].checked == false){
+              checkItem = false;
+           }
+        }
+        chk_box[0].checked = checkItem;
+     }
+	</script>
+</body>
+</HTML>

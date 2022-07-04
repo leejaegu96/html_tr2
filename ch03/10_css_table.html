@@ -12,12 +12,12 @@
 			border-width:1px;
 		
 			/* border-collapes: separate; */
-			border-collapse: collapes;
+			border-collapse: collapse;
 			/* border-spacing: 10px 10px; */
 			
-			width:800px;
+			width:100%;
 			
-			table-layout: auto;
+			/* table-layout: auto; */
 			table-layout:fixed;
 			
 		}
@@ -26,10 +26,18 @@
 			border:solid;
 			border-width: 1px;
 			border-collapse: collapse;
+			
+			/* text-align:left; */
+			/* text-align:right; */
+			/* text-align:justify; */
 			text-align:center;
-			height:50px;
+			
+			/* height:50px; */
+			/* 높이를 아래에서도 잡으면 위에 50px만 적용됨 */
+			
 			/* vertical-align:top; */
-			vertical-align:bottom;
+			/* vertical-align:bottom; */
+			vertical-align:middle;
 		}
 	</style>
 
@@ -37,18 +45,19 @@
 <br>
 	<table>
 		<tr>
- 		<!-- vscode -> 한줄 연달아 선택 (Ctrl + Alt + 방향키) -->
-			<!-- <th width="100px">번호</th>
-			<th width="100px">이름</th>
+ 		<!-- vscode - 한줄 연달아 선택 (Ctrl + Alt + 방향키) -->
+			<th width="80px" height="50px">번호</th>
+			<th width="80px">이름</th>
 			<th width="100px">아이디</th>
-			<th width="100px">이메일</th>
-			<th width="100px">모바일</th> -->
-		
+			<th>이메일</th>
+			<th width="200px">모바일</th>
+<!-- 			
 			<th>번호</th>
 			<th>이름</th>
 			<th>아이디</th>
 			<th>이메일</th>
 			<th>모바일</th>
+ -->			
 		</tr>
 		<tr>
 			<td>1</td>
