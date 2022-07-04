@@ -38,11 +38,7 @@
 	<table width="100%">
 		<tbody>
 			<tr>
-				<td width="200px" rowspan = "6"><span style="color:red;">정장차림의 증명사진
-				<br>넣으시면
-				<br>됩니다. 단축키
-				<br>Ctrl+N+I
-				</span></td>
+				<td width="150px" rowspan = "6"><span style="color:red;"><input type="file" name="file"></td>
 				<th width="100px" style="background-color: MintCream;">이&nbsp&nbsp름</th>
 				<td name="name"><input type="text" name="recruit" id="recruit"></td>
 				<th style="background-color: MintCream;">영&nbsp&nbsp문</th>
@@ -149,7 +145,7 @@
 				<th style="background-color: MintCream;">보유기술 및 수준</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="my-tbody_1">
 			<tr>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
@@ -158,7 +154,8 @@
 			</tr>
 		</tbody>
 	</table>
-	</table>
+	<button onclick="add_row_1()">행 추가하기</button>
+	<button onclick="delete_row_1()">행 삭제하기</button>
 	<h3>□ 경력사항(4대 보험 가입 경력)</h3>
 	<table width="100%">
 		<thead>
@@ -169,7 +166,7 @@
 				<th style="background-color: MintCream;">경험 및 습득역량</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="my-tbody_2">
 			<tr>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
@@ -178,6 +175,8 @@
 			</tr>
 		</tbody>
 	</table>
+	<button onclick="add_row_2()">행 추가하기</button>
+	<button onclick="delete_row_2()">행 삭제하기</button>
 	<center>
 		<button type="button" id="btnJoin" onClick="location.href='recruitList.html'">
 			<span>저장하기</span>
@@ -196,11 +195,11 @@
 	    var cell3 = row.insertCell(2);
 	    var cell4 = row.insertCell(3);
 	    var cell5 = row.insertCell(4);
-	    cell1.innerHTML = '';
-	    cell2.innerHTML = '';
-	    cell3.innerHTML = '';
-	    cell4.innerHTML = '';
-	    cell5.innerHTML = '';
+	    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
+	    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+	    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+	    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+	    cell5.innerHTML = "<tr><td><input type=\"text\"></td>";
 	  }
 
 	  function delete_row() {
@@ -209,5 +208,47 @@
 	    // my_tbody.deleteRow(0); // 상단부터 삭제
 	    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
 	  }
+	  function add_row_1() {
+		    var my_tbody = document.getElementById('my-tbody_1');
+		    // var row = my_tbody.insertRow(0); // 상단에 추가
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+		  }
+
+		  function delete_row_1() {
+		    var my_tbody = document.getElementById('my-tbody_1');
+		    if (my_tbody.rows.length < 1) return;
+		    // my_tbody.deleteRow(0); // 상단부터 삭제
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		  }
+		  function add_row_2() {
+			    var my_tbody = document.getElementById('my-tbody_2');
+			    // var row = my_tbody.insertRow(0); // 상단에 추가
+			    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+			    var cell1 = row.insertCell(0);
+			    var cell2 = row.insertCell(1);
+			    var cell3 = row.insertCell(2);
+			    var cell4 = row.insertCell(3);
+			    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
+			    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+			    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+			    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+			    cell5.innerHTML = "<tr><td><input type=\"text\"></td>";
+			  }
+
+			  function delete_row_2() {
+			    var my_tbody = document.getElementById('my-tbody_2');
+			    if (my_tbody.rows.length < 1) return;
+			    // my_tbody.deleteRow(0); // 상단부터 삭제
+			    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+			  }
+		  
 	</script>
 </HTML>
