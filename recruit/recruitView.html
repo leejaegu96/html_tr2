@@ -7,107 +7,111 @@
 	
 	<style type ="text/css">
 		table, th, td {
-			border: 1px solid black;
+			border: 1px solid gray;
 			border-collapse: collapse;
 		}
 			
 		th, td {
-			width: 100px;
-			text-align:center;
+			text-align : center;
 			padding : 10px;
 				}
+		table {
+		    margin-left:auto; 
+		    margin-right:auto;
+		}
+		h1 {
+			text-align:center;
+		}
+		h3 {
+			text-align:left;
+		}
 	</style>
 </HEAD>
 <body>
-	<h1><center>입사지원서</center></h1>
-	<form method="get" action="./recruitModForm.html" id="form">
-	<table width="100%">
+	<table>
+		<caption>
+			<h1>입사지원서</h1>
+		</caption>
 		<thead>
 			<tr>
-				<th width="100px" style="background-color: MintCream;">지원분야</th>
-				<td width="100px"><center>백엔드 개발자</center></td>
-				<th width="100px" style="background-color: MintCream;">경력구분</th>
-				<td width="100px"><center>신입</center></td>
-				<th width="100px" style="background-color: MintCream;">희망연봉</th>
-				<td width="100px"><center>3400만원</center></td>
+				<th width="160px" style="background-color: MintCream;">지원분야</th>
+				<td width="150px">백엔드 개발자</td>
+				<th width="160px" style="background-color: MintCream;">경력구분</th>
+				<td width="150px">신입</td>
+				<th width="160px" style="background-color: MintCream;">희망연봉</th>
+				<td width="150px">4000만원</td>
 			</tr>
 		</thead>
 	</table>
 	<br>
-	<h3>□ 기본정보</h3>
-	<table width="100%">
-		<tbody>
-			<tr>
-				<td width="200px" rowspan = "6"><span style="color:red;">정장차림의 증명사진
-				<br>넣으시면
-				<br>됩니다. 단축키
-				<br>Ctrl+N+I
-				</span></td>
-				<th width="100px" style="background-color: MintCream;">이&nbsp&nbsp름</th>
-				<td name="name">이가나</td>
-				<th style="background-color: MintCream;">영&nbsp&nbsp문</th>
-				<td>Lee Ga Na</td>
-			</tr>
-			<tr>
+	<table>
+		<caption><h3>□ 기본정보</h3></caption>
+		<tr>
+			<td width="200px" rowspan = "6"><img alt="이력서" src="recruit.png" width="250px"></td>
+			<th width="150px" style="background-color: MintCream;">이&nbsp&nbsp름</th>
+			<td width="200px" name="name">이가나</td>
+			<th width="150px" style="background-color: MintCream;">영&nbsp&nbsp문</th>
+			<td width="200px">Lee Ga Na</td>
+		</tr>
+		<tr>
 <!-- 				
 				<td>.</td>
 				 -->
-				<th style="background-color: MintCream;">성&nbsp&nbsp별</th>
-				<td>남</td>
-				<th style="background-color: MintCream;">생년월일</th>
-				<td>1996.01.01</td>
-			</tr>
-			<tr>
+			<th style="background-color: MintCream;">성&nbsp&nbsp별</th>
+			<td>남</td>
+			<th style="background-color: MintCream;">생년월일</th>
+			<td>1996.01.01</td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
 				 -->
-				<th style="background-color: MintCream;">전화번호</th>
-				<td>010-1111-1111</td>
-				<th style="background-color: MintCream;">비상연락망</th>
-				<td>010-0000-0000</td>
-			</tr>
-			<tr>
+			<th style="background-color: MintCream;">전화번호</th>
+			<td>010-1111-1111</td>
+			<th style="background-color: MintCream;">비상연락망</th>
+			<td>010-0000-0000</td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
 				 -->
-				<th style="background-color: MintCream;">전자우편</th>
-				<td>123@naver.com</td>
-				<th style="background-color: MintCream;">나&nbsp&nbsp이</th>
-				<td>27</td>
-			</tr>
-			<tr>
+			<th style="background-color: MintCream;">전자우편</th>
+			<td>123@naver.com</td>
+			<th style="background-color: MintCream;">나&nbsp&nbsp이</th>
+			<td>27</td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
 				 -->
-				<th style="background-color: MintCream;">주&nbsp&nbsp소</th>
-				<td colspan = "3">서울시 광진구 능동 123123123</td>
+			<th style="background-color: MintCream;">주&nbsp&nbsp소</th>
+			<td colspan = "3">서울시 광진구 능동 123123123</td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
-			</tr>
-			<tr>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
 				 -->
-				<th style="background-color: MintCream;">취미생활</th>
-				<td colspan = "3"> </td>
+			<th style="background-color: MintCream;">취미생활</th>
+			<td colspan = "3"> </td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
-			</tr>
-		</tbody>
+		</tr>
 	</table>
-	<h3>□ 학력사항 (최신 이력이 가장 위로)</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>□ 학력사항</h3></caption>
 		<thead>
 			<tr>
-				<th width="200px" style="background-color: MintCream;">기간</td>
-				<th width="100px" style="background-color: MintCream;">출신학교</td>
-				<th width="50px" style="background-color: MintCream;">구분</td>
-				<th width="100px" style="background-color: MintCream;">학과</td>
-				<th width="50px" style="background-color: MintCream;">소재지</td>
+				<th width="300px" style="background-color: MintCream;">기간</td>
+				<th width="200px" style="background-color: MintCream;">출신학교</td>
+				<th width="100px" style="background-color: MintCream;">구분</td>
+				<th width="250px" style="background-color: MintCream;">학과</td>
+				<th width="100px" style="background-color: MintCream;">소재지</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -120,13 +124,13 @@
 			</tr>
 		</tbody>
 	</table>
-	<h3>□ 교육연수</h3>
-	<table width="100%" style="text-align: center;">
+	<table>
+	<caption><h3>□ 교육연수</h3></caption>
 		<thead>
 			<tr>
-				<th width="200px" style="background-color: MintCream;">연수기간</th>
-				<th width="200px" style="background-color: MintCream;">연수기관</th>
-				<th width="400px" style="background-color: MintCream;">연수과정 및 내용</th>
+				<th width="250px" style="background-color: MintCream;">연수기간</th>
+				<th width="250px" style="background-color: MintCream;">연수기관</th>
+				<th width="500px" style="background-color: MintCream;">연수과정 및 내용</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -146,14 +150,14 @@
 			</tr>
 		</tbody>
 	</table>
-	<h3>□ 자격사항</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>□ 자격사항</h3></caption>
 		<thead>
 			<tr>
-				<th width="150px" style="background-color: MintCream;">취득일</th>
+				<th width="200px" style="background-color: MintCream;">취득일</th>
 				<th width="200px" style="background-color: MintCream;">종류 및 등급</th>
 				<th width="200px" style="background-color: MintCream;">발행처</th>
-				<th style="background-color: MintCream;">보유기술 및 수준</th>
+				<th width="380px" style="background-color: MintCream;">보유기술 및 수준</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -166,14 +170,14 @@
 		</tbody>
 	</table>
 	</table>
-	<h3>□ 경력사항(4대 보험 가입 경력)</h3>
-	<table width="100%">
+	<table>
+	<caption><h3>□ 경력사항</h3></caption>
 		<thead>
 			<tr>
-				<th width="250px" style="background-color: MintCream;">활동기간</th>
+				<th width="280px" style="background-color: MintCream;">활동기간</th>
 				<th width="200px" style="background-color: MintCream;">기관</th>
-				<th width="150px" style="background-color: MintCream;">담당업무</th>
-				<th style="background-color: MintCream;">경험 및 습득역량</th>
+				<th width="200px" style="background-color: MintCream;">담당업무</th>
+				<th width="300px" style="background-color: MintCream;">경험 및 습득역량</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -185,6 +189,7 @@
 			</tr>
 		</tbody>
 	</table>
+	<br><br>
 	<center>
 		<button type="button" id="btnJoin" onClick="location.href='recruitModForm.html'">
 			<span>수정하기</span>
