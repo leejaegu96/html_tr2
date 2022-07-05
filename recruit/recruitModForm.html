@@ -4,193 +4,319 @@
 	<meta charset = "uTF-8">
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 	<title>입사지원서 양식</title>
-	
-	<style type ="text/css">
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
-			
-		th, td {
-			width: 100px;
-			text-align:center;
-			padding : 10px;
-				}
-	</style>
+	<link rel="stylesheet" href="./css/recruit_1.css">
 </HEAD>
 <body>
-	<h1><center>입사지원서</center></h1>
-	<form method="get" action="./recruitModForm.html" id="form">
-	<table width="100%">
+	<table>
+		<caption>
+			<div style="float:left;"><img src="google.jpg" id="logo" width="100px" height="100px"></div>
+			<div style="float:center;"><h2>입사지원서</h2></div>
+		</caption>
 		<thead>
 			<tr>
-				<th width="100px" style="background-color: MintCream;">지원분야</th>
-				<td width="100px"><center>백엔드 개발자</center></td>
-				<th width="100px" style="background-color: MintCream;">경력구분</th>
-				<td width="100px"><center>신입</center></td>
-				<th width="100px" style="background-color: MintCream;">희망연봉</th>
-				<td width="100px"><center>3400만원</center></td>
+				<th width="100px">지원분야</th>
+				<td width="100px"><center><input type="text" name="recruit" value="백엔드 개발자" id="recruit"> </center></td>
+				<th width="100px">경력구분</th>
+				<td width="100px"><center><input type="text" name="recruit" id="recruit" value="신입"> </center></td>
+				<th width="100px">희망연봉</th>
+				<td width="100px"><center><input type="text" name="recruit" value="4000만원" id="recruit"> </center></td>
 			</tr>
 		</thead>
 	</table>
 	<br>
-	<h3>□ 기본정보</h3>
-	<table width="100%">
-		<tbody>
-			<tr>
-				<td width="200px" rowspan = "6"><span style="color:red;">정장차림의 증명사진
-				<br>넣으시면
-				<br>됩니다. 단축키
-				<br>Ctrl+N+I
-				</span></td>
-				<th width="100px" style="background-color: MintCream;">이&nbsp&nbsp름</th>
-				<td name="name">이가나</td>
-				<th style="background-color: MintCream;">영&nbsp&nbsp문</th>
-				<td>Lee Ga Na</td>
-			</tr>
-			<tr>
+	<table>
+		<caption><h3>👉 기본정보</h3></caption>
+		<tr>
+			<td width="200px" rowspan = "6"><img alt="이력서" src="recruit.png" width="250px"><input type="file" name="file"></td>
+			<th width="100px">이&nbsp;&nbsp;름</th>
+			<td name="name"><input type="text" name="recruit" value="이가나" id="recruit"> </td>
+			<th width="100px">영&nbsp;&nbsp;문</th>
+			<td><input type="text" name="recruit" value="Lee Ga Na" id="recruit"> </td>
+		</tr>
+		<tr>
 <!-- 				
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">성&nbsp&nbsp별</th>
-				<td>남</td>
-				<th style="background-color: MintCream;">생년월일</th>
-				<td>1996.01.01</td>
-			</tr>
-			<tr>
+-->
+			<th>성&nbsp&nbsp별</th>
+			<td><input type="text" name="recruit" value="남" id="recruit"> </td>
+			<th>생년월일</th>
+			<td><input type="text" name="recruit" value="1996.01.01" id="recruit"> </td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">전화번호</th>
-				<td>010-1111-1111</td>
-				<th style="background-color: MintCream;">비상연락망</th>
-				<td>010-0000-0000</td>
-			</tr>
-			<tr>
+-->
+			<th>전화번호</th>
+			<td><input type="text" name="recruit" value="010-1111-1111" id="recruit"> </td>
+			<th>비상연락망</th>
+			<td><input type="text" name="recruit" value="010-0000-0000" id="recruit"> </td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">전자우편</th>
-				<td>123@naver.com</td>
-				<th style="background-color: MintCream;">나&nbsp&nbsp이</th>
-				<td>27</td>
-			</tr>
-			<tr>
+-->
+			<th>전자우편</th>
+			<td><input type="text" name="recruit" value="123@naver.com" id="recruit"> </td>
+			<th>나&nbsp&nbsp이</th>
+			<td><input type="text" name="recruit" value="27" id="recruit"></td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">주&nbsp&nbsp소</th>
-				<td colspan = "3">서울시 광진구 능동 123123123</td>
+-->
+			<th>주&nbsp&nbsp소</th>
+			<td colspan = "3"><input type="text" name="recruit" value="서울시 광진구 능동 123123123" id="recruit" size="80" maxlength="80"></td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
-			</tr>
-			<tr>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">취미생활</th>
-				<td colspan = "3"> </td>
+-->
+			<th>취미생활</th>
+			<td colspan = "3"><input type="text" name="recruit" value=" " id="recruit" size="80" maxlength="80"></td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
+		</tr>
+	</table>
+	<table>
+		<caption><h3>👉 학력사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row()">행 추가하기</button>
+			<button class="w-btn w-btn-gray" type="button" onclick="delete_row()">행 삭제하기</button>
+		</caption>
+		<thead>
+			<tr>
+				<th><input type="checkbox" name="chk_box" id="all" onclick="allcheck();"></th>
+				<th width="200px">기간</td>
+				<th width="100px">출신학교</td>
+				<th width="50px">구분</td>
+				<th width="100px">학과</td>
+				<th width="50px">소재지</td>
+			</tr>
+		</thead>
+		<tbody id="my-tbody">
+			<tr>
+				<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+				<td><input type="text" name="recruit" value="2020.03.01 ~ 2022.02.01" id="recruit" size="30"></td>
+				<td><input type="text" name="recruit" value="OO대학" id="recruit" size="20"></td>
+				<td><input type="text" name="recruit" value="졸업" id="recruit" size="10"></td>
+				<td><input type="text" name="recruit" value="산업경영학과(학)" id="recruit" size="20"></td>
+				<td><input type="text" name="recruit" value="서울" id="recruit" size="10"></td>
 			</tr>
 		</tbody>
 	</table>
-	<h3>□ 학력사항 (최신 이력이 가장 위로)</h3>
-	<table width="100%">
+	<table>
+	<caption><h3>👉 교육연수</h3></caption>
 		<thead>
 			<tr>
-				<th width="200px" style="background-color: MintCream;">기간</td>
-				<th width="100px" style="background-color: MintCream;">출신학교</td>
-				<th width="50px" style="background-color: MintCream;">구분</td>
-				<th width="100px" style="background-color: MintCream;">학과</td>
-				<th width="50px" style="background-color: MintCream;">소재지</td>
+				<th width="200px">연수기간</th>
+				<th width="200px">연수기관</th>
+				<th width="400px">연수과정 및 내용</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>2020.03.01 ~ 2022.02.01</td>
-				<td>OO대학</td>
-				<td>졸업</td>
-				<td>산업경영학과(학)</td>
-				<td>서울</td>
-			</tr>
-		</tbody>
-	</table>
-	<h3>□ 교육연수</h3>
-	<table width="100%" style="text-align: center;">
-		<thead>
-			<tr>
-				<th width="200px" style="background-color: MintCream;">연수기간</th>
-				<th width="200px" style="background-color: MintCream;">연수기관</th>
-				<th width="400px" style="background-color: MintCream;">연수과정 및 내용</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>2022.06.23~2022.12.08</td>
+				<td><textarea rows="10" cols="30" name="contents">2022.06.23~2022.12.08</textarea></td>
 				<td>
-					(주)이젠 아카데미<br>
-					(서울 강남역 본원)<br>
-					국가기간전략산업직종 훈련<br>
+					<textarea rows="10" cols="30" name="contents">(주)이젠 아카데미
+						(서울 강남역 본원)
+						국가기간전략산업직종 훈련</textarea>
 				</td>
 				<td>
-					Open API활용 자바 안드로이드 웹&앱 개발자<br>
-					JAVA, JAVASCRIPT, JQUERY, JSP, SPRING, HTML, CSS, GIT,<br>
-					Bootstrap, JSTL, AJAX PSOTMAN AWS TOMCAT, 등을<br>
-					공부하여 자바를 이용한 웹 프로그래밍 역량을 키웠습니다.<br>
+					<textarea rows="10" cols="50" name="contents">Open API활용 자바 안드로이드 웹&앱 개발자
+						JAVA, JAVASCRIPT, JQUERY, JSP, SPRING, HTML, CSS, GIT,
+						Bootstrap, JSTL, AJAX PSOTMAN AWS TOMCAT, 등을
+						공부하여 자바를 이용한 웹 프로그래밍 역량을 키웠습니다.</textarea>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<h3>□ 자격사항</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>👉 자격사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row_1()">행 추가하기</button>
+			<button class="w-btn w-btn-gray" type="button" onclick="delete_row_1()">행 삭제하기</button>
+		</caption>
 		<thead>
 			<tr>
-				<th width="150px" style="background-color: MintCream;">취득일</th>
-				<th width="200px" style="background-color: MintCream;">종류 및 등급</th>
-				<th width="200px" style="background-color: MintCream;">발행처</th>
-				<th style="background-color: MintCream;">보유기술 및 수준</th>
+				<th><input type="checkbox" name="chk_box_1" id="all" onclick="allcheck_1();"></th>
+				<th width="150px">취득일</th>
+				<th width="200px">종류 및 등급</th>
+				<th width="200px">발행처</th>
+				<th>보유기술 및 수준</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="my-tbody_1">
 			<tr>
-				<td>2021.07.16</td>
-				<td>컴퓨터활용 1급</td>
-				<td>대한상공회의소</td>
-				<td></td>
+				<th><input type="checkbox" name="chk_box_1" onclick="check_1();"></th>
+				<td><input type="text" name="recruit" value="2021.07.16" id="recruit"></td>
+				<td><input type="text" name="recruit" value="컴퓨터활용 1급" id="recruit"></td>
+				<td><input type="text" name="recruit" value="대한상공회의소" id="recruit"></td>
+				<td><input type="text" name="recruit" value=" " id="recruit" size="40" maxlength="40"></td>
 			</tr>
 		</tbody>
 	</table>
-	</table>
-	<h3>□ 경력사항(4대 보험 가입 경력)</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>👉 경력사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row_2()">행 추가하기</button>
+				<button class="w-btn w-btn-gray" type="button" onclick="delete_row_2()">행 삭제하기</button>
+		</caption>
 		<thead>
 			<tr>
-				<th width="250px" style="background-color: MintCream;">활동기간</th>
-				<th width="200px" style="background-color: MintCream;">기관</th>
-				<th width="150px" style="background-color: MintCream;">담당업무</th>
-				<th style="background-color: MintCream;">경험 및 습득역량</th>
+				<th><input type="checkbox" name="chk_box_2" id="all" onclick="allcheck_2();"></th>
+				<th width="250px">활동기간</th>
+				<th width="200px">기관</th>
+				<th width="150px">담당업무</th>
+				<th>경험 및 습득역량</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="my-tbody_2">
 			<tr>
-				<td>2020.08.01 ~ 2021.02.01</td>
-				<td>OO대학교</td>
-				<td>OO</td>
-				<td>OO</td>
+				<th><input type="checkbox" name="chk_box_2" onclick="check_2();"></th>
+				<td><input type="text" name="recruit" value="2020.08.01 ~ 2021.02.01" id="recruit"></td>
+				<td><input type="text" name="recruit" value="OO대학교" id="recruit"></td>
+				<td><input type="text" name="recruit" value="OO" id="recruit"></td>
+				<td><input type="text" name="recruit" value="OO" id="recruit" size="30" maxlength="30"></td>
 			</tr>
 		</tbody>
 	</table>
+	<br><br>
 	<center>
-		<button type="button" id="btnJoin" onClick="location.href='recruitList.html'">
-			<span>저장하기</span>
-		</button>
-		<button type="button" id="btnJoin" onClick="location.href='recruitList.html'">
-			<span>뒤로가기</span>
-		</button>
+		<button class="w-btn w-btn-blue" type="button" onClick="location.href='recruitList.html'">저장하기</button>
+		<button class="w-btn w-btn-gray" type="button" onClick="location.href='recruitView.html'">뒤로가기</button>
 	</center>
+	<script type="text/javascript">
+		function allcheck(){
+			var chk_box = document.getElementsByName("chk_box");
+			var checkItem="";
+			for(var i = 0; i < chk_box.length; i++){
+			   if(chk_box[0].checked == true){
+				   chk_box[i].checked = true;
+			   } else {
+				   chk_box[i].checked = false;
+			   	}
+			}
+		}
+		function check(){
+			var chk_box = document.getElementsByName("chk_box");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box.length; i++){
+				   if(chk_box[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box[0].checked = checkItem;
+		}
+		function allcheck_1(){
+			var chk_box_1 = document.getElementsByName("chk_box_1");
+			var checkItem="";
+			for(var i = 0; i < chk_box_1.length; i++){
+			   if(chk_box_1[0].checked == true){
+				   chk_box_1[i].checked = true;
+			   } else {
+				   chk_box_1[i].checked = false;
+			   	}
+			}
+		}
+		function check_1(){
+			var chk_box_1 = document.getElementsByName("chk_box_1");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box_1.length; i++){
+				   if(chk_box_1[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box_1[0].checked = checkItem;
+		}
+		function allcheck_2(){
+			var chk_box_2 = document.getElementsByName("chk_box_2");
+			var checkItem="";
+			for(var i = 0; i < chk_box_2.length; i++){
+			   if(chk_box_2[0].checked == true){
+				   chk_box_2[i].checked = true;
+			   } else {
+				   chk_box_2[i].checked = false;
+			   	}
+			}
+		}
+		function check_2(){
+			var chk_box_2 = document.getElementsByName("chk_box_2");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box_2.length; i++){
+				   if(chk_box_2[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box_2[0].checked = checkItem;
+		}
+		function add_row() {
+		    var my_tbody = document.getElementById('my-tbody');
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    var cell6 = row.insertCell(5);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
+		    cell6.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
+		}
+	
+		function delete_row() {
+		    var my_tbody = document.getElementById('my-tbody');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
+		function add_row_1() {
+		    var my_tbody = document.getElementById('my-tbody_1');
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='40'></td>";
+		}
+
+		function delete_row_1() {
+		    var my_tbody = document.getElementById('my-tbody_1');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
+		function add_row_2() {
+		    var my_tbody = document.getElementById('my-tbody_2');
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		}
+
+		function delete_row_2() {
+		    var my_tbody = document.getElementById('my-tbody_2');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
+	</script>
+</body>
 </HTML>

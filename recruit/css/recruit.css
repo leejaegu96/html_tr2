@@ -1,0 +1,82 @@
+	/* <link rel="stylesheet" href="./css/recruit.css"> */
+
+table {
+	width:1200px;
+	border-collapse:separate;
+    border: solid white 1px;
+    border-radius:10px;
+    border-width:2px;
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+td, th {
+	height:60px;
+	text-align : center;
+	padding : 5px;
+}
+
+th {
+	background-color: #CBE5EF;
+	border-top: none;
+}
+
+td {
+	background-color: white;
+}
+caption {
+	text-align:right;
+} 
+img {
+	margin-left:auto; 
+    margin-right:auto;
+}
+body {
+	background-color: #F8F6F0;
+}
+h1 {
+	text-align:center;
+}
+h2 {
+	font-size: 40px;
+}
+h3 {
+    font-size: 40px;
+    text-align:center;
+    background: linear-gradient(to right top, #061EA3, white);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+button {
+   	margin: 10px;
+   	cursor:pointer;
+}
+.xyz { 
+			caption-side: bottom; 
+			text-align:right;
+		}
+.w-btn {
+	position: relative;
+	border: solid gray 0px;
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 15px;
+	font-family: "paybooc-Light", sans-serif;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+	font-weight: 600;
+	transition: 0.25s;
+}
+.w-btn-indigo {
+	background-color: aliceblue;
+	color: #1e6b7b;
+}
+.w-btn-blue {
+	background-color: #6aafe6;
+	color: #d4dfe6;
+}
+.w-btn-gray {
+	background-color: #a3a1a1;
+	color: #e3dede;
+}
+

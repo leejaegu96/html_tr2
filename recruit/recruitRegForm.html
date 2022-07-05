@@ -4,251 +4,311 @@
 	<meta charset = "uTF-8">
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 	<title>입사지원서 양식</title>
-	
-	<style type ="text/css">
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
-			
-		th, td {
-			width: 100px;
-			text-align:center;
-			padding : 10px;
-				}
-	</style>
+	<link rel="stylesheet" href="./css/recruit_1.css">
 </HEAD>
 <body>
-	<h1><center>입사지원서</center></h1>
-	<!-- <form method="get" action="./recruitModForm.html" id="form"> -->
-	<table width="100%">
+	<br>
+	<table>
+		<caption>
+			<div style="float:left;"><img src="google.jpg" id="logo" width="100px" height="100px"></div>
+			<div style="float:center;"><h2>입사지원서</h2></div>
+		</caption>
 		<thead>
 			<tr>
-				<th width="100px" style="background-color: MintCream;">지원분야</th>
+				<th width="100px">지원분야</th>
 				<td width="100px"> <input type="text" name="recruit" placeholder="지원분야" id="recruit"> </td>
-				<th width="100px" style="background-color: MintCream;">경력구분</th>
+				<th width="100px">경력구분</th>
 				<td width="100px"> <input type="text" name="recruit" placeholder="경력구분" id="recruit"> </td>
-				<th width="100px" style="background-color: MintCream;">희망연봉</th>
+				<th width="100px">희망연봉</th>
 				<td width="100px"> <input type="text" name="recruit" placeholder="희망연봉" id="recruit"> </td>
 			</tr>
 		</thead>
 	</table>
 	<br>
-	<h3>□ 기본정보</h3>
-	<table width="100%">
-		<tbody>
-			<tr>
-				<td width="150px" rowspan = "6"><span style="color:red;"><input type="file" name="file"></td>
-				<th width="100px" style="background-color: MintCream;">이&nbsp&nbsp름</th>
-				<td name="name"><input type="text" name="recruit" id="recruit"></td>
-				<th style="background-color: MintCream;">영&nbsp&nbsp문</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-			</tr>
-			<tr>
+	<table>
+		<caption><h3>👉 기본정보</h3></caption>
+		<tr>
+			<td width="150px" rowspan = "6"><span style="color:red;"><input type="file" name="file"></td>
+			<th width="100px">이&nbsp&nbsp름</th>
+			<td name="name"><input type="text" name="recruit" id="recruit"></td>
+			<th width="100px">영&nbsp&nbsp문</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+		</tr>
+		<tr>
 <!-- 				
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">성&nbsp&nbsp별</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<th style="background-color: MintCream;">생년월일</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-			</tr>
-			<tr>
+-->
+			<th>성&nbsp&nbsp별</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+			<th>생년월일</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">전화번호</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<th style="background-color: MintCream;">비상연락망</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-			</tr>
-			<tr>
+-->
+			<th>전화번호</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+			<th>비상연락망</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">전자우편</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<th style="background-color: MintCream;">나&nbsp&nbsp이</th>
-				<td><input type="text" name="recruit" id="recruit"></td>
-			</tr>
-			<tr>
+-->
+			<th>전자우편</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+			<th>나&nbsp&nbsp이</th>
+			<td><input type="text" name="recruit" id="recruit"></td>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">주&nbsp&nbsp소</th>
-				<td colspan = "3"><input type="text" name="recruit" id="recruit" size="80" maxlength="80"></td>
+-->
+			<th>주&nbsp&nbsp소</th>
+			<td colspan = "3"><input type="text" name="recruit" id="recruit" size="80" maxlength="80"></td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
-			</tr>
-			<tr>
+		</tr>
+		<tr>
 <!-- 			
 				<td>.</td>
-				 -->
-				<th style="background-color: MintCream;">취미생활</th>
-				<td colspan = "3"> <input type="text" name="recruit" id="recruit" size="80" maxlength="80"> </td>
+-->
+			<th>취미생활</th>
+			<td colspan = "3"> <input type="text" name="recruit" id="recruit" size="80" maxlength="80"> </td>
 <!-- 				
 				<td></td>
 				<td></td>
 -->
-			</tr>
-		</tbody>
+		</tr>
 	</table>
-	<h3>□ 학력사항 (최신 이력이 가장 위로)</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>👉 학력사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row()">행 추가하기</button>
+			<button class="w-btn w-btn-gray" type="button" onclick="delete_row()">행 삭제하기</button>
+		</caption>
 		<thead>
 			<tr>
-				<th width="200px" style="background-color: MintCream;">기간</td>
-				<th width="100px" style="background-color: MintCream;">출신학교</td>
-				<th width="50px" style="background-color: MintCream;">구분</td>
-				<th width="100px" style="background-color: MintCream;">학과</td>
-				<th width="50px" style="background-color: MintCream;">소재지</td>
+				<th><input type="checkbox" name="chk_box" id="all" onclick="allcheck();"></th>
+				<th width="100px">기간</th>
+				<th width="100px">출신학교</td>
+				<th width="100px">구분</td>
+				<th width="100px">학과</td>
+				<th width="100px">소재지</td>
 			</tr>
 		</thead>
 		<tbody id="my-tbody">
 			<tr>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
+				<th><input type="checkbox" name="chk_box" onclick="check();"></th>
+				<td><input type="text" name="recruit" id="recruit" size="30"></td>
+				<td><input type="text" name="recruit" id="recruit" size="20"></td>
+				<td><input type="text" name="recruit" id="recruit" size="10"></td>
+				<td><input type="text" name="recruit" id="recruit" size="20"></td>
+				<td><input type="text" name="recruit" id="recruit" size="10"></td>
 			</tr>
 		</tbody>
 	</table>
-	<button onclick="add_row()">행 추가하기</button>
-	<button onclick="delete_row()">행 삭제하기</button>
-	<h3>□ 교육연수</h3>
-	<table width="100%" style="text-align: center;">
+	<table>
+		<caption><h3>👉 교육연수</h3></caption>
+		</caption>
 		<thead>
 			<tr>
-				<th width="200px" style="background-color: MintCream;">연수기간</th>
-				<th width="200px" style="background-color: MintCream;">연수기관</th>
-				<th width="400px" style="background-color: MintCream;">연수과정 및 내용</th>
+				<th width="200px">연수기간</th>
+				<th width="200px">연수기관</th>
+				<th width="400px">연수과정 및 내용</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td><textarea rows="10" cols="50" name="contents" ></textarea></td>
-				<td><textarea rows="10" cols="50" name="contents" ></textarea></td>
+				<td><textarea rows="10" cols="30" name="contents" ></textarea></td>
+				<td><textarea rows="10" cols="30" name="contents" ></textarea></td>
 				<td><textarea rows="10" cols="50" name="contents" ></textarea>	</td>
 			</tr>
 		</tbody>
 	</table>
-	<h3>□ 자격사항</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>👉 자격사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row_1()">행 추가하기</button>
+			<button class="w-btn w-btn-gray" type="button" onclick="delete_row_1()">행 삭제하기</button>
+		</caption>
 		<thead>
 			<tr>
-				<th width="150px" style="background-color: MintCream;">취득일</th>
-				<th width="200px" style="background-color: MintCream;">종류 및 등급</th>
-				<th width="200px" style="background-color: MintCream;">발행처</th>
-				<th style="background-color: MintCream;">보유기술 및 수준</th>
+				<th><input type="checkbox" name="chk_box_1" id="all" onclick="allcheck_1();"></th>
+				<th width="150px">취득일</th>
+				<th width="200px">종류 및 등급</th>
+				<th width="200px">발행처</th>
+				<th>보유기술 및 수준</th>
 			</tr>
 		</thead>
 		<tbody id="my-tbody_1">
 			<tr>
+				<th><input type="checkbox" name="chk_box_1" onclick="check_1();"></th>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
+				<td><input type="text" name="recruit" id="recruit" size="30"></td>
 			</tr>
 		</tbody>
 	</table>
-	<button onclick="add_row_1()">행 추가하기</button>
-	<button onclick="delete_row_1()">행 삭제하기</button>
-	<h3>□ 경력사항(4대 보험 가입 경력)</h3>
-	<table width="100%">
+	<table>
+		<caption><h3>👉 경력사항</h3></caption>
+		<caption class="xyz" >
+			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row_2()">행 추가하기</button>
+			<button class="w-btn w-btn-gray" type="button" onclick="delete_row_2()">행 삭제하기</button>
+	</caption>
 		<thead>
 			<tr>
-				<th width="250px" style="background-color: MintCream;">활동기간</th>
-				<th width="200px" style="background-color: MintCream;">기관</th>
-				<th width="150px" style="background-color: MintCream;">담당업무</th>
-				<th style="background-color: MintCream;">경험 및 습득역량</th>
+				<th><input type="checkbox" name="chk_box_2" id="all" onclick="allcheck_2();"></th>
+				<th width="250px">활동기간</th>
+				<th width="200px">기관</th>
+				<th width="150px">담당업무</th>
+				<th>경험 및 습득역량</th>
 			</tr>
 		</thead>
 		<tbody id="my-tbody_2">
 			<tr>
+				<th><input type="checkbox" name="chk_box_2" onclick="check_2();"></th>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
 				<td><input type="text" name="recruit" id="recruit"></td>
-				<td><input type="text" name="recruit" id="recruit"></td>
+				<td><input type="text" name="recruit" id="recruit" size="30"></td>
 			</tr>
 		</tbody>
 	</table>
-	<button onclick="add_row_2()">행 추가하기</button>
-	<button onclick="delete_row_2()">행 삭제하기</button>
 	<center>
-		<button type="button" id="btnJoin" onClick="location.href='recruitList.html'">
-			<span>저장하기</span>
-		</button>
-		<button type="button" id="btnJoin" onClick="location.href='recruitList.html'">
-			<span>홈으로</span>
-		</button>
+		<button class="w-btn w-btn-blue" type="button" onClick="location.href='recruitList.html'">저장하기</button>
+		<button class="w-btn w-btn-gray" type="button" onClick="location.href='recruitList.html'">뒤로가기</button>
 	</center>
 	<script type="text/javascript">
-	function add_row() {
-	    var my_tbody = document.getElementById('my-tbody');
-	    // var row = my_tbody.insertRow(0); // 상단에 추가
-	    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
-	    var cell1 = row.insertCell(0);
-	    var cell2 = row.insertCell(1);
-	    var cell3 = row.insertCell(2);
-	    var cell4 = row.insertCell(3);
-	    var cell5 = row.insertCell(4);
-	    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
-	    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
-	    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
-	    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
-	    cell5.innerHTML = "<tr><td><input type=\"text\"></td>";
-	  }
-
-	  function delete_row() {
-	    var my_tbody = document.getElementById('my-tbody');
-	    if (my_tbody.rows.length < 1) return;
-	    // my_tbody.deleteRow(0); // 상단부터 삭제
-	    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
-	  }
-	  function add_row_1() {
-		    var my_tbody = document.getElementById('my-tbody_1');
-		    // var row = my_tbody.insertRow(0); // 상단에 추가
+		function allcheck(){
+			var chk_box = document.getElementsByName("chk_box");
+			var checkItem="";
+			for(var i = 0; i < chk_box.length; i++){
+			   if(chk_box[0].checked == true){
+				   chk_box[i].checked = true;
+			   } else {
+				   chk_box[i].checked = false;
+			   	}
+			}
+		}
+		function check(){
+			var chk_box = document.getElementsByName("chk_box");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box.length; i++){
+				   if(chk_box[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box[0].checked = checkItem;
+		}
+		function allcheck_1(){
+			var chk_box_1 = document.getElementsByName("chk_box_1");
+			var checkItem="";
+			for(var i = 0; i < chk_box_1.length; i++){
+			   if(chk_box_1[0].checked == true){
+				   chk_box_1[i].checked = true;
+			   } else {
+				   chk_box_1[i].checked = false;
+			   	}
+			}
+		}
+		function check_1(){
+			var chk_box_1 = document.getElementsByName("chk_box_1");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box_1.length; i++){
+				   if(chk_box_1[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box_1[0].checked = checkItem;
+		}
+		function allcheck_2(){
+			var chk_box_2 = document.getElementsByName("chk_box_2");
+			var checkItem="";
+			for(var i = 0; i < chk_box_2.length; i++){
+			   if(chk_box_2[0].checked == true){
+				   chk_box_2[i].checked = true;
+			   } else {
+				   chk_box_2[i].checked = false;
+			   	}
+			}
+		}
+		function check_2(){
+			var chk_box_2 = document.getElementsByName("chk_box_2");
+			var checkItem="";
+				for(var i = 0 ; i < chk_box_2.length; i++){
+				   if(chk_box_2[i].checked == false){
+				      checkItem = false;
+				   }
+			}
+		chk_box_2[0].checked = checkItem;
+		}
+		function add_row() {
+		    var my_tbody = document.getElementById('my-tbody');
 		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
 		    var cell1 = row.insertCell(0);
 		    var cell2 = row.insertCell(1);
 		    var cell3 = row.insertCell(2);
 		    var cell4 = row.insertCell(3);
-		    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    var cell5 = row.insertCell(4);
+		    var cell6 = row.insertCell(5);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
+		    cell6.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
+		}
+	
+		function delete_row() {
+		    var my_tbody = document.getElementById('my-tbody');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
+		function add_row_1() {
+		    var my_tbody = document.getElementById('my-tbody_1');
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
-		  }
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		}
 
-		  function delete_row_1() {
+		function delete_row_1() {
 		    var my_tbody = document.getElementById('my-tbody_1');
 		    if (my_tbody.rows.length < 1) return;
-		    // my_tbody.deleteRow(0); // 상단부터 삭제
 		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
-		  }
-		  function add_row_2() {
-			    var my_tbody = document.getElementById('my-tbody_2');
-			    // var row = my_tbody.insertRow(0); // 상단에 추가
-			    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
-			    var cell1 = row.insertCell(0);
-			    var cell2 = row.insertCell(1);
-			    var cell3 = row.insertCell(2);
-			    var cell4 = row.insertCell(3);
-			    cell1.innerHTML = "<tr><td><input type=\"text\"></td>";
-			    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
-			    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
-			    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
-			    cell5.innerHTML = "<tr><td><input type=\"text\"></td>";
-			  }
+		}
+		function add_row_2() {
+		    var my_tbody = document.getElementById('my-tbody_2');
+		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    var cell3 = row.insertCell(2);
+		    var cell4 = row.insertCell(3);
+		    var cell5 = row.insertCell(4);
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
+		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		}
 
-			  function delete_row_2() {
-			    var my_tbody = document.getElementById('my-tbody_2');
-			    if (my_tbody.rows.length < 1) return;
-			    // my_tbody.deleteRow(0); // 상단부터 삭제
-			    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
-			  }
-		  
+		function delete_row_2() {
+		    var my_tbody = document.getElementById('my-tbody_2');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
 	</script>
+</body>
 </HTML>
