@@ -264,7 +264,7 @@
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
 		    var cell6 = row.insertCell(5);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
@@ -272,11 +272,23 @@
 		    cell6.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
 		}
 	
-		function delete_row() {
-		    var my_tbody = document.getElementById('my-tbody');
-		    if (my_tbody.rows.length < 1) return;
-		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
-		}
+		function delete_row(){       
+		   var sTable = document.getElementById('my-tbody');
+		   var lastRow = sTable.rows.length;
+		   
+		   if(confirm("정말 삭제 하시겠습니까?")){        
+		       for( var i=1 ; i < lastRow ; i++ ){
+		            // 가장 중요한 부분이다.
+		            // getElementsByTagName("tr")을 이용해서 tag가 "tr"인 모든 것들을 배열로 받는다.
+		            // for문을 돌면서 각 "tr"라인의 cells[0].firstChild가 check되어 있는지 확인
+		            // 체크가 되어 있다면 deleteRow를 이용해서 삭제 한다.
+		           if( document.getElementsByTagName("tr")[i].cells[0].firstChild.checked){
+		               sTable.deleteRow(i);
+		           }
+		       }        
+		   }    
+		   return;
+	     }
 		function add_row_1() {
 		    var my_tbody = document.getElementById('my-tbody_1');
 		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
@@ -285,7 +297,7 @@
 		    var cell3 = row.insertCell(2);
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box_1'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
@@ -305,7 +317,7 @@
 		    var cell3 = row.insertCell(2);
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box_2'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
