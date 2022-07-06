@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 <!-- 				
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>성&nbsp&nbsp별</th>
 			<td><input type="text" name="recruit" id="recruit"></td>
@@ -45,7 +45,7 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>전화번호</th>
 			<td><input type="text" name="recruit" id="recruit"></td>
@@ -54,7 +54,7 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>전자우편</th>
 			<td><input type="text" name="recruit" id="recruit"></td>
@@ -63,24 +63,24 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>주&nbsp&nbsp소</th>
 			<td colspan = "3"><input type="text" name="recruit" id="recruit" size="80" maxlength="80"></td>
 <!-- 				
-				<td></td>
-				<td></td>
+			<td></td>
+			<td></td>
 -->
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>취미생활</th>
 			<td colspan = "3"> <input type="text" name="recruit" id="recruit" size="80" maxlength="80"> </td>
 <!-- 				
-				<td></td>
-				<td></td>
+			<td></td>
+			<td></td>
 -->
 		</tr>
 	</table>
@@ -159,7 +159,7 @@
 		<caption class="xyz" >
 			<button class="w-btn w-btn-indigo-outline:hover-" type="button" onclick="add_row_2()">행 추가하기</button>
 			<button class="w-btn w-btn-gray" type="button" onclick="delete_row_2()">행 삭제하기</button>
-	</caption>
+		</caption>
 		<thead>
 			<tr>
 				<th><input type="checkbox" name="chk_box_2" id="all" onclick="allcheck_2();"></th>
@@ -256,14 +256,13 @@
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
 		    var cell6 = row.insertCell(5);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
 		    cell6.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
 		}
-	
 		function delete_row() {
 		    var my_tbody = document.getElementById('my-tbody');
 		    if (my_tbody.rows.length < 1) return;
@@ -277,13 +276,12 @@
 		    var cell3 = row.insertCell(2);
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box_1'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
 		}
-
 		function delete_row_1() {
 		    var my_tbody = document.getElementById('my-tbody_1');
 		    if (my_tbody.rows.length < 1) return;
@@ -297,13 +295,12 @@
 		    var cell3 = row.insertCell(2);
 		    var cell4 = row.insertCell(3);
 		    var cell5 = row.insertCell(4);
-		    cell1.innerHTML = "<tr><th><input type=\"checkbox\"></th>";
+		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box_2'></th>";
 		    cell2.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
 		}
-
 		function delete_row_2() {
 		    var my_tbody = document.getElementById('my-tbody_2');
 		    if (my_tbody.rows.length < 1) return;

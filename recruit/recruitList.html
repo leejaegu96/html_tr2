@@ -87,44 +87,44 @@
 		</tbody>
 	</table>
 	<script type="text/javascript">
-	function allcheck(){
-        var chk_box = document.getElementsByName("chk_box");
-        var checkItem="";
-        for(var i = 0; i < chk_box.length; i++){
-           if(chk_box[0].checked == true){
-        	   chk_box[i].checked = true;
-           } else {
-        	   chk_box[i].checked = false;
-           }
-        }
-     }
-     function check(){
-        var chk_box = document.getElementsByName("chk_box");
-        var checkItem="";
-        for(var i = 0 ; i < chk_box.length; i++){
-           if(chk_box[i].checked == false){
-              checkItem = false;
-           }
-        }
-        chk_box[0].checked = checkItem;
-     }
-     function delete_row(){       
-   	   var sTable = document.getElementById('my-tbody');
-   	   var lastRow = sTable.rows.length;
-   	   
-   	   if(confirm("정말 삭제 하시겠습니까?]")){        
-   	       for( var i=1 ; i < lastRow ; i++ ){
-   	            // 가장 중요한 부분이다.
-   	            // getElementsByTagName("tr")을 이용해서 tag가 "tr"인 모든 것들을 배열로 받는다.
-   	            // for문을 돌면서 각 "tr"라인의 cells[0].firstChild가 check되어 있는지 확인
-   	            // 체크가 되어 있다면 deleteRow를 이용해서 삭제 한다.
-   	           if( document.getElementsByTagName("tr")[i].cells[0].firstChild.checked){
-   	               sTable.deleteRow(i-1);
-   	           }
-   	       }        
-   	   }    
-   	   return;
-    }
+		function allcheck(){
+	        var chk_box = document.getElementsByName("chk_box");
+	        var checkItem="";
+	        for(var i = 0; i < chk_box.length; i++){
+	           if(chk_box[0].checked == true){
+	        	   chk_box[i].checked = true;
+	           } else {
+	        	   chk_box[i].checked = false;
+	           }
+	        }
+	     }
+	     function check(){
+	        var chk_box = document.getElementsByName("chk_box");
+	        var checkItem="";
+	        for(var i = 0 ; i < chk_box.length; i++){
+	           if(chk_box[i].checked == false){
+	              checkItem = false;
+	           }
+	        }
+	        chk_box[0].checked = checkItem;
+	     }
+	     function delete_row(){       
+	   	   var sTable = document.getElementById('my-tbody');
+	   	   var lastRow = sTable.rows.length;
+	   	   
+	   	   if(confirm("정말 삭제 하시겠습니까?]")){        
+	   	       for( var i=1 ; i < lastRow ; i++ ){
+	   	            // 가장 중요한 부분이다.
+	   	            // getElementsByTagName("tr")을 이용해서 tag가 "tr"인 모든 것들을 배열로 받는다.
+	   	            // for문을 돌면서 각 "tr"라인의 cells[0].firstChild가 check되어 있는지 확인
+	   	            // 체크가 되어 있다면 deleteRow를 이용해서 삭제 한다.
+	   	           if( document.getElementsByTagName("tr")[i].cells[0].firstChild.checked){
+	   	               sTable.deleteRow(i-1);
+	   	           }
+	   	       }        
+	   	   }    
+	   	   return;
+	    }
 	</script>
 </body>
 </html>

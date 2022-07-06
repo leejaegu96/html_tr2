@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 <!-- 				
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>성&nbsp&nbsp별</th>
 			<td><input type="text" name="recruit" value="남" id="recruit"> </td>
@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>전화번호</th>
 			<td><input type="text" name="recruit" value="010-1111-1111" id="recruit"> </td>
@@ -53,7 +53,7 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>전자우편</th>
 			<td><input type="text" name="recruit" value="123@naver.com" id="recruit"> </td>
@@ -62,24 +62,24 @@
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>주&nbsp&nbsp소</th>
 			<td colspan = "3"><input type="text" name="recruit" value="서울시 광진구 능동 123123123" id="recruit" size="80" maxlength="80"></td>
 <!-- 				
-				<td></td>
-				<td></td>
+			<td></td>
+			<td></td>
 -->
 		</tr>
 		<tr>
 <!-- 			
-				<td>.</td>
+			<td>.</td>
 -->
 			<th>취미생활</th>
 			<td colspan = "3"><input type="text" name="recruit" value=" " id="recruit" size="80" maxlength="80"></td>
 <!-- 				
-				<td></td>
-				<td></td>
+			<td></td>
+			<td></td>
 -->
 		</tr>
 	</table>
@@ -111,7 +111,7 @@
 		</tbody>
 	</table>
 	<table>
-	<caption><h3>👉 교육연수</h3></caption>
+		<caption><h3>👉 교육연수</h3></caption>
 		<thead>
 			<tr>
 				<th width="200px">연수기간</th>
@@ -125,13 +125,15 @@
 				<td>
 					<textarea rows="10" cols="30" name="contents">(주)이젠 아카데미
 						(서울 강남역 본원)
-						국가기간전략산업직종 훈련</textarea>
+						국가기간전략산업직종 훈련
+					</textarea>
 				</td>
 				<td>
 					<textarea rows="10" cols="50" name="contents">Open API활용 자바 안드로이드 웹&앱 개발자
 						JAVA, JAVASCRIPT, JQUERY, JSP, SPRING, HTML, CSS, GIT,
 						Bootstrap, JSTL, AJAX PSOTMAN AWS TOMCAT, 등을
-						공부하여 자바를 이용한 웹 프로그래밍 역량을 키웠습니다.</textarea>
+						공부하여 자바를 이용한 웹 프로그래밍 역량을 키웠습니다.
+					</textarea>
 				</td>
 			</tr>
 		</tbody>
@@ -265,30 +267,17 @@
 		    var cell5 = row.insertCell(4);
 		    var cell6 = row.insertCell(5);
 		    cell1.innerHTML = "<tr><th><input type=\"checkbox\" name='chk_box'></th>";
-		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
+		    cell2.innerHTML = "<tr><td><input type=\"text\" size='30' ></td>";
 		    cell3.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
 		    cell4.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='20'></td>";
 		    cell6.innerHTML = "<tr><td><input type=\"text\" size='10'></td>";
 		}
-	
-		function delete_row(){       
-		   var sTable = document.getElementById('my-tbody');
-		   var lastRow = sTable.rows.length;
-		   
-		   if(confirm("정말 삭제 하시겠습니까?")){        
-		       for( var i=1 ; i < lastRow ; i++ ){
-		            // 가장 중요한 부분이다.
-		            // getElementsByTagName("tr")을 이용해서 tag가 "tr"인 모든 것들을 배열로 받는다.
-		            // for문을 돌면서 각 "tr"라인의 cells[0].firstChild가 check되어 있는지 확인
-		            // 체크가 되어 있다면 deleteRow를 이용해서 삭제 한다.
-		           if( document.getElementsByTagName("tr")[i].cells[0].firstChild.checked){
-		               sTable.deleteRow(i);
-		           }
-		       }        
-		   }    
-		   return;
-	     }
+		function delete_row() {
+		    var my_tbody = document.getElementById('my-tbody');
+		    if (my_tbody.rows.length < 1) return;
+		    my_tbody.deleteRow( my_tbody.rows.length-1 ); // 하단부터 삭제
+		}
 		function add_row_1() {
 		    var my_tbody = document.getElementById('my-tbody_1');
 		    var row = my_tbody.insertRow( my_tbody.rows.length ); // 하단에 추가
@@ -303,7 +292,6 @@
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='40'></td>";
 		}
-
 		function delete_row_1() {
 		    var my_tbody = document.getElementById('my-tbody_1');
 		    if (my_tbody.rows.length < 1) return;
@@ -323,7 +311,6 @@
 		    cell4.innerHTML = "<tr><td><input type=\"text\"></td>";
 		    cell5.innerHTML = "<tr><td><input type=\"text\" size='30'></td>";
 		}
-
 		function delete_row_2() {
 		    var my_tbody = document.getElementById('my-tbody_2');
 		    if (my_tbody.rows.length < 1) return;

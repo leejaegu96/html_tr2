@@ -10,10 +10,6 @@ table {
     margin-right:auto;
 }
 
-/* th, td {
-	border: 1px solid gray;
-	
-} */
 th, td {
 	border-collapse: collapse;
 	text-align : center;

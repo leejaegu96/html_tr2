@@ -9,18 +9,15 @@ table {
 	margin-left:auto; 
     margin-right:auto;
 }
-
 td, th {
 	height:60px;
 	text-align : center;
 	padding : 5px;
 }
-
 th {
 	background-color: #CBE5EF;
 	border-top: none;
 }
-
 td {
 	background-color: white;
 }
@@ -54,7 +51,7 @@ button {
 .xyz { 
 			caption-side: bottom; 
 			text-align:right;
-		}
+}
 .w-btn {
 	position: relative;
 	border: solid gray 0px;
