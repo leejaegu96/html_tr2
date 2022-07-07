@@ -10,76 +10,115 @@
 			background-color: #F4E4E4;
 			height: 150px;
 			text-align:center;
+			width:100%;
+			float: left;
 		}
 		#bbb {
 			background-color: #C79A9A;
 			height: 80px;
-			padding: 0px;
+			width: 100%;
+			float: left;
 		}
 		#ccc {
 			background-color: #A49D9D;
 			height: 440px;
-			width: 20%;
+			width: 15%;
 			float: left;
 		}
 		#ddd {
 			background-color: #D4C3F8;
 			height: 400px;
-			width: 80%;
+			width: 70%;
 			float: right;
 		}
 		#eee {
 			background-color: #CDFAFA;
 			text-align:center;
+			padding-top:10px;
 			height: 150px;
 			clear: both;
 		}
+		#fff {
+			width: 15%;
+			height:440px;
+			background-color: #F9F1B7;
+			text-align:center;
+			float: right;
+		}
 		table {
 			text-align:center;
+			margin-left: auto;
+			margin-right: auto;
+			width:100%;
 			height:300px;
 		}
 		caption {
 			background-color: #D4C3F8;
-			padding-bottom: 10px;
+			padding-bottom: 30px;
 			padding-top: 10px;
-			text-align: center;
+			text-align: left;
 			font-size:30px;
 		}
 		body {
-			width:1200px;
+			width:100%;
 			margin:0;
 			margin-left: auto;
 			margin-right: auto;
 		}
 		img {
-			margin-top:15px;
+			margin-top:-25px;
 		}
 		ul li {
 			list-style-type:none;
 			float: left;
-			margin-top:30px;
+			margin-top:15px;
 			margin-left:100px;
 		}
 		ol li {
+			list-style-type:none;
 			margin:30px 0;
-			margin-left:0px;
+			margin-left:-15px;
 		} 
+		li {
+			cursor:pointer;
+		}
 		 
 	</style>
 	
 </head>
 
 <body>
-	<div id="aaa"> <img alt="" src="../recruit/google.png"> </div>
-	<div id="bbb">
-		<ul>
-			<li>일반 관리</li>
-			<li>회원 관리</li>
-			<li>구성원 관리</li>
-			<li>기업 계약 관리</li>
-			<li>기타 서류 관리</li>
-			<li>A/S 관리</li>
-		</ul>
+	<div>
+		<div id="aaa"> <img alt="" src="kg_lg.png" width="400px" height="200px"> </div>
+		<div id="bbb">
+			<ul>
+				<li>일반 관리</li>
+				<li onclick="location.href='16_css_position3_tr.html'">회원 관리</li>
+				<li>구성원 관리</li>
+				<li>기업 계약 관리</li>
+				<li>기타 서류 관리</li>
+				<li>A/S 관리</li>
+			</ul>
+		</div>
+	</div>
+	<div id="fff">
+		<dl>
+			<dt>여기는</dt>
+			<dt>광고가</dt>
+			<dt>들어올</dt>
+			<dt>영역</dt>
+			<dt>입니다.</dt>
+			<dt>광고가</dt>
+			<dt>준비</dt>
+			<dt>중이니</dt>
+			<dt>양해</dt>
+			<dt>바랍</dt>
+			<dt>니다</dt>
+			<dt>!!</dt>
+			<dt>!!</dt>
+			<dt>!!</dt>
+			<dt>!!</dt>
+		</dl>
 	</div>
 	<div id="ccc">
 		<ol>
@@ -94,7 +133,7 @@
 	</div>
 	<div id="ddd">
 		<table>
-			<caption>회원관리</caption>
+			<caption>✎ 회원관리</caption>
 			<thead>
 				<tr>
 					<th>no</th>
@@ -176,5 +215,6 @@
 	<div id="eee">
 		<span>Copy right. 1111-LeeJaeGu</span>
 	</div>
+
 </body>
 </html>
