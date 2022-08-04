@@ -5,75 +5,165 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LeeJaeGu</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<style type="text/css">
+.quiz-container{
+      position:relative;
+      background-color:#f8f6f0;
+      font-size:17px;
+      color:#333;
+      height:150px;
+      margin-top:40px;
+      text-align:center;
+      font-weight:300;
+  }
+  
+  .slide{
+     position:absolute;
+     left:0px;
+     top:40px;
+     width:100%;
+     z-index:1;
+     opacity:0;
+     transition:opacity 0.5s;
+  }
+  
+  .active-slide{
+     opacity:1;
+     z-index:2;
+  }
+  </style>
 </head>
 
 <body>
+<h1>웹도리 Quiz</h1>
 
-					<div class="col-12">
-						<i class="fa-solid fa-users"><span style="font-size:20px;"> 지원자 추가</span></i>
-					</div> 
-					<div class="col-12">
-						<div class="container-floud">
-							<form class="row">
-								<div class="col-6">
-									<input type="file" class="form-control" id="upload_file" accept="image/*" required=true>
-									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >미리보기</button>
-									
-									<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-body">
-													<form>
-														<div class="mb-3" style="text-align:center;">
-															<img src="" id="img_section" style="width: 250px; height: 300px;">
-													    </div>
-													</form>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+<div class="quiz-container">
+    <div id="quiz"> </div>
+</div>
+
+<div class="quiz-ctrl">
+   <button id="previous" class="quiz-btn"> back </button>
+   <button id="next" class="quiz-btn"> next </button>
+   <button id="submit" class="quiz-btn"> 결과확인 </button>
+    
+   <div id="result"> </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/20c294a34b.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
-const exampleModal = document.getElementById('exampleModal')
-exampleModal.addEventListener('show.bs.modal', event => {
-  // Button that triggered the modal
-  const button = event.relatedTarget
-  // Extract info from data-bs-* attributes
-  const recipient = button.getAttribute('data-bs-whatever')
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = exampleModal.querySelector('.modal-title')
-  const modalBodyInput = exampleModal.querySelector('.modal-body input')
+const quizData = [
+    {
+        question : '웹개발에 주로 사용되는 프론트언어는?',
+        answers : {
+           a : "일본어",
+           b : "다랑어",
+           c : "자바스크립트"
+        },
+       correct : 'c'
+    },
+    {
+        question : '웹 디자인에 사용되는 언어는?',
+        answers : {
+            a : '미싱',
+            b : 'css',
+            c : '돈까s'
+        },
+       correct : 'b'
+    },
+    {
+          question : '블로그 형태로 웹사이트를 쉽게 개발할 수 있는 방식을 무엇이라고 하는가?',
+          answers : {
+                a : 'CMS',
+                b : 'WAX',
+                c : 'KISWISS'
+          },
+       correct : 'a'
+    }
+]
 
-  modalTitle.textContent = `New message to ${recipient}`
-  modalBodyInput.value = recipient
-})
+const quizDisplay = document.getElementById('quiz');
+const submitBtn = document.getElementById('submit');
+const previousBtn = document.getElementById('previous');
+const nextBtn = document.getElementById('next');
 
-const reader = new FileReader();
+let currentSlide = 0;
+const resultDisplay = document.getElementById('result');
 
-    reader.onload = (readerEvent) => {
-        document.querySelector("#img_section").setAttribute("src", readerEvent.target.result);
-        //파일을 읽는 이벤트가 발생하면 img_section의 src 속성을 readerEvent의 결과물로 대체함
-    };
+function buildQuiz(){
+     let output = [ ]; 
+      quizData.forEach(  
+          (currentQuestion, questionNum) => { 
+                      const answers = [ ];     
+                      for(item in currentQuestion.answers){  
+                                  answers.push(`<label>
+                                               <input type="radio" name="question${questionNum}" value="${item}">
+                                                   ${item} : ${currentQuestion.answers[item]}
+                                               </label>`);
+                         }
+                            output.push(`<div class="slide"><div class="question"> ${currentQuestion.question}</div>
+                                         <div class="answer">${answers.join('&nbsp;&nbsp;&nbsp;&nbsp;')}</div></div>`);
+                   }              
+      );
+         quizDisplay.innerHTML = output.join('</br>');
+   }
+	
+function showResult(){
+        const answerDisplays = quizDisplay.querySelectorAll('.answer');  
+          let numCorrect = 0; 
 
-    document.querySelector("#upload_file").addEventListener("change", (changeEvent) => {
-        //upload_file 에 이벤트리스너를 장착
+           quizData.forEach( (currentQuestion, questionNum)=>{
+                  const answerDisplay = answerDisplays[questionNum]; 
+                  const selector = `input[name=question${questionNum}]:checked`;  
+                  const userAnswer = (answerDisplay.querySelector(selector) || {}).value;  
 
-        const imgFile = changeEvent.target.files[0];
-        reader.readAsDataURL(imgFile);
-        //업로드한 이미지의 URL을 reader에 등록
-    })
+
+                   if(userAnswer === currentQuestion.correct){    
+                           numCorrect++;
+                           answerDisplays[questionNum].style.color = 'lightgreen';
+                   }else{
+                           answerDisplays[questionNum].style.color = 'red';
+                   }
+           });
+                  
+             
+             submitBtn.style.display = 'none';
+             resultDisplay.innerHTML = `<h3 style="color:#333;">${quizData.length}개중에서 ${numCorrect}개 맞추셨습니다.</h3>`
+   }
+ 
+	
+function showSlide(n){
+    slides[currentSlide].classList.remove('active-slide');
+	 slides[n].classList.add('active-slide');
+	 currentSlide = n;
+	   if(currentSlide === 0){
+	       previousBtn.style.display = 'none';
+	   }else{
+	       previousBtn.style.display = 'inline-block';
+	   }
+	   if(currentSlide === slides.length-1){
+	       nextBtn.style.display = 'none';
+		   submitBtn.style.display = 'inline-block';
+	   }else{
+	       nextBtn.style.display = 'inline-block';
+		   submitBtn.style.display = 'none';
+              if(document.getElementById('retry')){
+                      document.getElementById('retry').style.display = 'none';
+                }
+         
+	   }
+}
+
+function showNextSlide(){  showSlide(currentSlide+1); }
+function showPreviousSlide(){ showSlide(currentSlide-1); }
+
+
+   buildQuiz(); 
+ const slides = document.querySelectorAll('.slide');
+	showSlide(currentSlide);
+    previousBtn.addEventListener('click',showPreviousSlide);
+    nextBtn.addEventListener('click',showNextSlide);
+   submitBtn.addEventListener('click',showResult);   
 </script>
 
 </body>
