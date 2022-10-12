@@ -1,111 +1,188 @@
-<!-- Profile Edit Form----------------------------------------- -->
-<form>
-	<div class="row mb-3">
-		<label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-		<div class="col-md-8 col-lg-9">
-			<img src="../resources/assets/images/logo/recruit.png" alt="Profile" class="rounded-circle">
-		</div>
-	</div>
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<style type="text/css">
+		.quiz-container{
+	      position:relative;
+	      background-color:#f8f6f0;
+	      font-size:17px;
+	      color:#333;
+	      height:250px;
+	      margin-top:40px;
+	      text-align:center;
+	      font-weight:300;
+	      line-height:50px;
+	  }
+	  
+	  .slide{
+	     position:absolute;
+	     left:0px;
+	     top:40px;
+	     width:100%;
+	     z-index:1;
+	     opacity:0;
+	     transition:opacity 0.5s;
+	  }
+	  
+	  .active-slide{
+	     opacity:1;
+	     z-index:2;
+	  }
+	  .quiz-btn {
+	    font-size: 22px;
+	    color: #fff;
+	    background-color: #279;
+	    border-radius: 5px;
+	    padding: 5px 15px;
+	    margin: 10px;
+	    cursor: pointer;
+	    margin-bottom: 20px;
+	  }
+	  .quiz-ctrl {
+	    text-align: center;
+	}
+	
+	</style>
+</head>
+<body>
+<!-- start -->
+	
+	<h1>웹도리 Quiz</h1>
 
-	<div class="row mb-3">
-		<label for="Name" class="col-md-4 col-lg-3 col-form-label">Name</label>
-		<div class="col-md-8 col-lg-9">
-			<input type="text" class="form-control" name="ifmmName">
-		</div>
+	<div class="quiz-container">
+	    <div id="quiz"> </div> 
 	</div>
+	
+	<div class="quiz-ctrl">
+	   <button id="previous" class="quiz-btn"> back </button>
+	   <button id="next" class="quiz-btn"> next </button>
+	   <button id="submit" class="quiz-btn"> 결과확인 </button>
+	    
+	   <div id="result"> </div> 
+	</div>
+	
+<!-- end -->
+	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script type="text/javascript">
 
-	<div class="row mb-3">
-		<label for="Gender" class="col-md-4 col-lg-3 col-form-label">Gender</label>
-		<div class="col-md-8 col-lg-9">
-			<select class="form-select" name="ifmmGender">
-				<option value="1">Male</option>
-				<option value="2">Female</option>
-				<option value="3">etc</option>
-			</select>
-		</div>
-	</div>
+const quizData = [
+    {
+        question : '웹개발에 주로 사용되는 프론트언어는? <br> 블로그',
+        answers : {
+           a : 'asdf',
+           b : 'css',
+           c : '돈까s'
+        },
+       correct : 'c'
+    },
+    {
+        question : '웹 디자인에 사용되는 언어는?',
+        answers : {
+            a : '미싱',
+            b : 'css',
+            c : '돈까s'
+        },
+       correct : 'b'
+    },
+    {
+		question : '블로그 형태로 웹사이트를 쉽게 개발할 수 있는 방식을 무엇이라고 하는가? <br> 블로그',
+		answers : {
+		      a : 'CMS',
+		      b : 'WAX',
+		      c : 'KISWISS'
+		},
+       correct : 'a'
+    }
+]
 
-	<div class="row mb-3">
-		<label for="date" class="col-md-4 col-lg-3 col-form-label">Date Of Birth</label>
-		<div class="col-md-8 col-lg-9">
-			<input type="text" class="form-control" id="ifmmDob" name="ifmmDob">
-		</div>
-	</div>
+const quizDisplay = document.getElementById('quiz');
+const submitBtn = document.getElementById('submit');
+const previousBtn = document.getElementById('previous');
+const nextBtn = document.getElementById('next');
 
-	<div class="row mb-3">
-		<label for="Country" class="col-md-4 col-lg-3 col-form-label">Email</label>
-		<div class="col-md-8 col-lg-9">
-			<div class="input-group">
-				<input type="text" id="Email" name="Email" class="form-control" placeholder="User email"> <span class="input-group-text">@</span> <input type="text" id="Domain" name="Domain" class="form-control" placeholder="Domain"> <select class="form-select" name="ifmmEmailDomain" id="ifmmEmailDomain">
-					<option value="11">직접입력</option>
-					<option value="8">naver.com</option>
-					<option value="9">google.com</option>
-					<option value="10">daum.net</option>
-				</select>
-			</div>
-			<input type="text" class="form-control" id="ifmmEmail" name="ifmmEmail"> <input class="form-text" type="checkbox" name="ifmmMailNy" value="1"> <input class="form-text" type="hidden" name="ifmmMailNy" value="0"> <label class="form-text" for="ifmmMailNy"> E-mail을 통한 소식/정보 수신을 동의하시겠습니까? </label>
-		</div>
-	</div>
+let currentSlide = 0;
+const resultDisplay = document.getElementById('result');
 
-	<div class="row mb-3">
-		<label for="Address" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-		<div class="col-md-8 col-lg-9">
-			<input type="hidden" id="inputPhone2AllowedNy" name="inputPhone2AllowedNy" value="0">
-			<div class="input-group">
-				<select class="form-select" id="ifmmPhoneCarrier" name="ifmmPhoneCarrier">
-					<option value="4">SKT</option>
-					<option value="5">KT</option>
-					<option value="6">LG</option>
-					<option value="7">기타</option>
-				</select> <select class="form-select" id="inputPhone1" required>
-					<option>010</option>
-					<option>011</option>
-					<option>019</option>
-				</select> <span class="input-group-text">-</span> <input type="text" id="inputPhone2" class="form-control" maxlength='4' onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"> <span class="input-group-text">-</span> <input type="text" id="inputPhone3" class="form-control" maxlength='4' onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+function buildQuiz(){
+     let output = [ ]; 
+      quizData.forEach(  
+          (currentQuestion, questionNum) => { 
+                      const answers = [ ];     
+                      for(item in currentQuestion.answers){  
+                                  answers.push(`<label>
+                                               <input type="text" >
+                                               ${item} : ${currentQuestion.answers[item]}
+                                               </label>`);
+                         }
+                            output.push(`<div class="slide"><div class="question"> ${currentQuestion.question}</div>
+                                         <div class="answer">${answers.join('&nbsp;&nbsp;&nbsp;&nbsp;')}</div></div>`);
+                   }              
+      );
+         quizDisplay.innerHTML = output.join('</br>');
+   }
+	
+function showResult(){
+        const answerDisplays = quizDisplay.querySelectorAll('.answer');  
+          let numCorrect = 0; 
 
-				<!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">인증번호 요청</button> -->
-			</div>
-			<div class="invalid-feedback" id="inputPhone2ChkFeedback"></div>
-			<input type="text" id="ifmmPhone" name="ifmmPhone" class="form-control">
-			<!-- 
-<div class="col-6">
-	<div class="input-group md-3" style="padding-top: 5px;">
-		<input type="text" class="form-control" placeholder="Code Number" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-		<button class="btn btn-outline-secondary" type="button" id="button-addon2">인증번호 확인</button>
-	</div>
-</div>
- -->
-			<input class="form-text" type="checkbox" name="ifmmSmsNy" value="1"> <input class="form-text" type="hidden" name="ifmmSmsNy" value="0"> <label class="form-text" for="ifmmSmsNy"> SMS을 통한 소식/정보 수신을 동의하시겠습니까? </label>
-		</div>
-	</div>
+           quizData.forEach( (currentQuestion, questionNum)=>{
+                  const answerDisplay = answerDisplays[questionNum]; 
+                  const selector = `input[name=question${questionNum}]:checked`;  
+                  const userAnswer = (answerDisplay.querySelector(selector) || {}).value;  
 
-	<div class="row mb-3">
-		<label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-		<div class="col-md-8 col-lg-9">
-			<div class="input-group">
-				<div class="col-6">
-					<div class="input-group">
-						<input type="text" id="sample6_postcode" class="form-control" placeholder="우편번호" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-						<button class="btn btn-outline-secondary" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-						<button class="btn btn-outline-secondary" type="button" id="btnAddressClear" value="리셋하기">
-							<i class="fa-solid fa-xmark"></i>
-						</button>
-					</div>
-				</div>
-				<div class="input-group" style="padding-top: 5px;">
-					<input type="text" class="form-control" id="sample6_address" placeholder="주소" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-				</div>
-				<div class="input-group" style="padding-top: 5px;">
-					<input type="text" class="form-control" id="sample6_detailAddress" placeholder="상세주소" aria-label="Recipient's username" aria-describedby="button-addon2" required> <input type="text" class="form-control" id="sample6_extraAddress" placeholder="참고항목" aria-label="Recipient's username" aria-describedby="button-addon2" required>
-				</div>
-				<input type="text" class="form-control" id="ifmmAddress" name="ifmmAddress">
-			</div>
-		</div>
-	</div>
-	<div class="text-center">
-		<button type="submit" class="btn btn-primary">Save Changes</button>
-	</div>
-</form>
-<!-- End Profile Edit Form -->
+
+                   if(userAnswer === currentQuestion.correct){    
+                           numCorrect++;
+                           answerDisplays[questionNum].style.color = 'lightgreen';
+                   }else{
+                           answerDisplays[questionNum].style.color = 'red';
+                   }
+           });
+                  
+             
+             submitBtn.style.display = 'none';
+             resultDisplay.innerHTML = `<h3 style="color:#333;">${quizData.length}개중에서 ${numCorrect}개 맞추셨습니다.</h3>`
+   }
+ 
+	
+function showSlide(n){
+    slides[currentSlide].classList.remove('active-slide');
+	 slides[n].classList.add('active-slide');
+	 currentSlide = n;
+	   if(currentSlide === 0){
+	       previousBtn.style.display = 'none';
+	   }else{
+	       previousBtn.style.display = 'inline-block';
+	   }
+	   if(currentSlide === slides.length-1){
+	       nextBtn.style.display = 'none';
+		   submitBtn.style.display = 'inline-block';
+	   }else{
+	       nextBtn.style.display = 'inline-block';
+		   submitBtn.style.display = 'none';
+              if(document.getElementById('retry')){
+                      document.getElementById('retry').style.display = 'none';
+                }
+         
+	   }
+}
+
+function showNextSlide(){  showSlide(currentSlide+1); }
+function showPreviousSlide(){ showSlide(currentSlide-1); }
+
+
+   buildQuiz(); 
+ const slides = document.querySelectorAll('.slide');
+	showSlide(currentSlide);
+    previousBtn.addEventListener('click',showPreviousSlide);
+    nextBtn.addEventListener('click',showNextSlide);
+   submitBtn.addEventListener('click',showResult);   
+
+</script>
+</body>
+</html>
