@@ -424,54 +424,29 @@
             }
         })
     });
-    function quizTotal(){
-        const answerDisplays = quizDisplay.querySelectorAll('.answer');  
-          let numCorrect = 0; 
-
-           quizData.forEach( (currentQuestion, questionNum)=>{
-                  const answerDisplay = answerDisplays[questionNum]; 
-                  const selector = `input[name=question${questionNum}]:checked`;  
-                  const userAnswer = (answerDisplay.querySelector(selector) || {}).value;  
-
-
-                   if(userAnswer === currentQuestion.correct){    
-                           numCorrect++;
-                           answerDisplays[questionNum].style.color = 'lightgreen';
-                   }else{
-                           answerDisplays[questionNum].style.color = 'red';
-                   }
-           });
-                  
-             
-             submitBtn.style.display = 'none';
-             resultDisplay.innerHTML = `<h3 style="color:#333;">${quizData.length}개중에서 ${numCorrect}개 맞추셨습니다.</h3>`
-   }
     
-    function quizTotal(){
-    	alret('asdf');
-    }
+    
     function quizTotal ()
 	{	
-    	quizconfirm.forEach((btn, num) => {
     	
     	for(i=0;i<quizInfo.length;i++) {
     		
-    	}
-            btn.addEventListener("click", () => {
+    		btn.addEventListener("click", () => {
                 // 사용자 정답
                 const userWord = quizInput[num].value;
                 // console.log(userWord);
-                const sum = 0;
+                var sum = 0;
                 // 사용자 정답 비교
                 if(userWord == quizInfo[num].answerResult){
-                    sum += sum + 1;
+                    sum += 1;
                 }else {
                    
                 }
                 alert(sum);
             })
-        });
+    	}
 	}
+	
     </script>
 </body>
 
